@@ -1,0 +1,31 @@
+﻿@{
+    ViewData["Title"] = "Sign Up";
+}
+
+<h2>Create an Account</h2>
+
+@using (Html.BeginForm("SignUp", "Account", FormMethod.Post))
+{
+    <div>
+        <label for="Username">Username</label>
+        <input type="text" name="Username" required />
+    </div>
+    <div>
+        <label for="Email">Email</label>
+        <input type="email" name="Email" required />
+    </div>
+    <div>
+        <label for="Password">Password</label>
+        <input type="password" name="Password" required />
+    </div>
+    <div>
+        <button type="submit">Sign Up</button>
+    </div>
+}
+
+@if (ViewData["ErrorMessage"] != null)
+{
+    <div style="color: red;">
+        @ViewData["ErrorMessage"]
+    </div>
+}
